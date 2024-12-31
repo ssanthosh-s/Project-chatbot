@@ -1,0 +1,106 @@
+/* Universal selector for reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Chat area */
+.chatarea {
+    width: 400px;
+    height: 600px;
+    background-color: rgb(201, 201, 42);
+    border: 2px solid darkgoldenrod;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Heading */
+#heading {
+    background-color: darkgoldenrod;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    color: black;
+}
+
+/* Content area */
+.content {
+    flex: 1; /* Ensures it grows to fill available space */
+    overflow-y: auto; /* Adds a scrollbar if content exceeds height */
+    padding: 10px;
+    background-color: #ffffff; /* White background for contrast */
+    color: black; /* Black text color for readability */
+    border: 2px solid darkgoldenrod; /* Adds a border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px 0; /* Adds spacing above and below the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+
+/* Message boxes */
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* Light gray for user messages */
+    color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Bot messages */
+.bot-message {
+    background-color: #d1ecf1; /* Light blue for bot messages */
+    border-left: 5px solid #17a2b8; /* Blue accent for bot messages */
+}
+
+/* User messages */
+.user-message {
+    background-color: #fff3cd; /* Light yellow for user messages */
+    border-left: 5px solid #ffc107; /* Yellow accent for user messages */
+    text-align: right; /* Align user messages to the right */
+}
+
+
+/* Input area */
+.inputarea {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Input field */
+#userinput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Send button */
+.sender {
+    padding: 10px 20px;
+    background-color: darkgoldenrod;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    cursor: pointer;
+}
+
+.sender:hover {
+    background-color: goldenrod;
+}
