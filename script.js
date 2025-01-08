@@ -49,7 +49,7 @@ function addMessageToChat(message, messageType) {
 
 // Function to fetch a response from the Gemini AI model
 async function getAIResponse(userMessage) {
-  const apiKey = "AIzaSyAVRTL5Ln7BdnMyfVNOPdLF_ZvTej8-9Gg"; 
+  const apiKey = "YOUR API KEY"; 
 
   // Import the Google Generative AI library 
     const { GoogleGenerativeAI } = require('@google/generative-ai');
