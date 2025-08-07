@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspha AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hljs-theme">
+</head>
+<body>
+    <div id="particles-container"></div>
+
+    <div class="chatarea">
+        <div id="heading">
+            <h1>Aspha AI</h1>
+            <button id="theme-switcher" aria-label="Switch Theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+        <div class="content">
+            <div class="message bot-message">
+                <h2>Hi, I am Aspha.<br>How can I help you?</h2>
+            </div>
+        </div>
+        <div class="inputarea">
+            <input type="text" id="userinput" placeholder="Enter your message...">
+            <button class="sender" aria-label="Send message">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="./dist/bundle.js" type="module"></script>
+</body>
+</html>

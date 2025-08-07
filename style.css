@@ -1,0 +1,95 @@
+/* Define color palettes as CSS variables */
+:root {
+    /* Light Theme (Default) */
+    --bg-color: #F0F2F5;
+    --text-color: #1c1e21;
+    --chat-area-bg: #FFFFFF;
+    --heading-color: #050505;
+    --bot-message-bg: #E4E6EB;
+    --user-message-bg: #0084FF;
+    --user-message-text: #FFFFFF;
+    --input-bar-bg: #FFFFFF;
+    --input-text-color: #050505;
+    --placeholder-color: #65676B;
+    --sender-bg: #E4E6EB;
+    --sender-color: #050505;
+    --sender-hover-bg: #D8DADF;
+    --border-color: #CED0D4;
+    --scrollbar-thumb-color: #BCC0C4;
+    --scrollbar-track-color: var(--bg-color);
+    --code-bg: #F0F2F5;
+    --code-border: #DCDFE3;
+    --copy-btn-bg: #E4E6EB;
+    --copy-btn-text: #050505;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme {
+    /* Dark Theme */
+    --bg-color: #131314;
+    --text-color: #E3E3E3;
+    --chat-area-bg: #131314;
+    --heading-color: #E3E3E3;
+    --bot-message-bg: #2E2F32;
+    --user-message-bg: #343541;
+    --user-message-text: #FFFFFF;
+    --input-bar-bg: #1E1F20;
+    --input-text-color: #FFFFFF;
+    --placeholder-color: #888;
+    --sender-bg: #343541;
+    --sender-color: #E3E3E3;
+    --sender-hover-bg: #4a4b52;
+    --border-color: #555;
+    --scrollbar-thumb-color: #555;
+    --scrollbar-track-color: var(--bg-color);
+    --code-bg: #1E1F20;
+    --code-border: #444;
+    --copy-btn-bg: #343541;
+    --copy-btn-text: #E3E3E3;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Base styles using variables */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: var(--bg-color); color: var(--text-color); display: flex; justify-content: center; align-items: center; height: 100vh; transition: background-color 0.3s, color 0.3s; }
+
+/* --- Particle Container --- */
+#particles-container { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
+
+/* --- Main Layout --- */
+.chatarea { background-color: var(--chat-area-bg); width: 100%; height: 100%; max-width: 800px; display: flex; flex-direction: column; padding: 0 20px; box-shadow: 0 4px 20px var(--shadow-color); z-index: 1; }
+#heading { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; font-size: 1.5em; color: var(--heading-color); }
+.content { flex: 1; overflow-y: auto; padding-right: 10px; display: flex; flex-direction: column; gap: 20px; }
+
+/* --- Theme Switcher --- */
+#theme-switcher { background: none; border: 1px solid var(--border-color); border-radius: 20px; cursor: pointer; padding: 5px; font-size: 1.2rem; line-height: 0; }
+.sun-icon { display: none; }
+body.dark-theme .moon-icon { display: none; }
+body.dark-theme .sun-icon { display: inline; }
+
+/* --- Messages --- */
+.message { padding: 15px; border-radius: 12px; line-height: 1.5; max-width: 85%; display: flex; align-items: flex-start; gap: 15px; animation: fade-in-up 0.4s ease-out; }
+.bot-message { background-color: var(--bot-message-bg); color: var(--text-color); align-self: flex-start; }
+.bot-message::before { content: ''; display: block; width: 32px; height: 32px; flex-shrink: 0; background-image: url('icon.png'); background-size: cover; border-radius: 50%; }
+.user-message { background-color: var(--user-message-bg); color: var(--user-message-text); align-self: flex-end; }
+
+/* --- Input Bar --- */
+.inputarea { display: flex; align-items: center; position: relative; margin: 20px 0; background-color: var(--input-bar-bg); border: 1px solid var(--border-color); border-radius: 24px; padding: 5px 5px 5px 20px; transition: box-shadow 0.3s ease-in-out; }
+.inputarea:focus-within { box-shadow: 0 0 15px var(--shadow-color); }
+#userinput { flex: 1; background: transparent; border: none; outline: none; color: var(--input-text-color); font-size: 1rem; }
+#userinput::placeholder { color: var(--placeholder-color); }
+.sender { background-color: var(--sender-bg); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; color: var(--sender-color); transition: background-color 0.3s, transform 0.2s ease; }
+.sender:hover { background-color: var(--sender-hover-bg); transform: scale(1.05); }
+
+/* --- Code Blocks --- */
+.message pre { background-color: var(--code-bg); padding: 15px; border-radius: 8px; overflow-x: auto; border: 1px solid var(--code-border); position: relative; }
+.message code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+.copy-btn { position: absolute; top: 10px; right: 10px; background-color: var(--copy-btn-bg); color: var(--copy-btn-text); border: 1px solid var(--border-color); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 0.8em; opacity: 0.5; transition: opacity 0.2s, transform 0.2s ease; }
+.message pre:hover .copy-btn { opacity: 1; }
+.copy-btn:hover { transform: scale(1.05); }
+
+/* --- Animations & Scrollbar --- */
+@keyframes fade-in-up { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+.content::-webkit-scrollbar { width: 8px; }
+.content::-webkit-scrollbar-track { background: var(--scrollbar-track-color); }
+.content::-webkit-scrollbar-thumb { background-color: var(--scrollbar-thumb-color); border-radius: 10px; border: 2px solid var(--scrollbar-track-color); }
