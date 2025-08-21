@@ -27,7 +27,7 @@ if (!apiKey) {
   process.exit(1);
 }
 const googleAI = new GoogleGenerativeAI(apiKey);
-const model = googleAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+const model = googleAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
 
 
 // --- API Route ---
